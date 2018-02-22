@@ -6,6 +6,7 @@ module.exports = function longestConsecutiveLength(array) {
   res.push(count);
 
   array.sort( (a,b) => a - b);
+  array = array.filter( (x,i,arr) => x !== arr[i+1] );
   array.forEach( (x, i, arr) => {
     if (arr[i+1] - x === 1) {
       count++;
